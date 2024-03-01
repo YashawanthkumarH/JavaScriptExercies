@@ -1,3 +1,11 @@
+/* Perform different operations on non-primitive data types and use all the Primitive data types and demonstarte below concepts 
+    1. Create Object
+    2. Different types of ways to Print all the members of Object
+    3. Access the Object members
+    4. Try to Change Object member 
+    5. Use if, else and else if conditions on object 
+    */
+
 //Object of Poster from Amazon portal, it has all types of data members
 const amazonPoster = {
     productName : "Parker Pen",
@@ -33,3 +41,14 @@ if (amazonPoster.currentPrice===270 && amazonPoster.isOfferAplied){
 }else {
     console.log("Pen prize is not equal to 270");
 }
+
+/* Perform all the operations that we can perform on Strings
+*/
+
+//Try to create username for social media page where name is taken as input and print username for social media
+//ex : Input -> Yashawanth, Output -> @yashawanth10
+//generated username should have small cases starting with '@' and ending with 'number of letters in taken string'
+
+let fullName = "Rahul H";
+let userName1 = "@".concat(fullName).trim().toLowerCase().replace(' ','').concat(fullName.length);
+console.log(userName1);
