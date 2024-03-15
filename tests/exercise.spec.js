@@ -62,12 +62,14 @@ test.describe("Verify that user is able to create new site from Professional WS 
             await createSite.create.region('European Union');
             await createSite.create.clickContinue();
             await createSite.create.confirmOrganizationSelection();
+            expect(await createSite.create.createPantheonSiteIsDisplayed(), "Create Your Pantheon Site page is not displayed").to.be.true;
         });
 
         await test.step("And: Setup the WordPress site and visit site dashboard after verifying workflow is completed", async function () {
             expect(await createSite.deployWordpress.deployingWordpressIsDisplayed(),"Deploying Wordpress is not displayed").to.be.true;
             expect(await createSite.deployWordpress.wordpressIsDeployedIsDisplayed(),"Wordpress is deployed message is not displayed").to.be.true;
             await createSite.deployWordpress.visitSiteDashBoard();
+            expect(await wp.siteDashboard.siteDashboardIsDisplayed(), "Site dashboard page is not displayed").to.be.true;
         });
 
         await test.step("And: Verify recntly visisted site is matching with created site", async function () {
